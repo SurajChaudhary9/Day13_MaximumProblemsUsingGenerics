@@ -2,12 +2,8 @@ package com.bridgelabz.generics;
 
 public class Main {
 	public static void main(String[] args) {
-		System.out.println("Welcome to check max of three variables");
-
-		Integer a = 25, b = 24, c = 19;
-
-		TestMaximum.testMaximum(a, b, c);
-
+		System.out.println("Welcome to Check maximum of three variables");
+		Float x = 1.5f, y = 2.5f, z = 0.65f;
+		TestMaximum.testMaximum(x, y, z);
 	}
-
 }
