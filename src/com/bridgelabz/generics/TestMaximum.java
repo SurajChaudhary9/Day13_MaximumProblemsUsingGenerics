@@ -1,36 +1,32 @@
-/**UC4 : PROBLEM STATEMENT
+/**REFACTOR : PROBLEM STATEMENT
  * Refactor all the 3 to One Generic Method and find the maximum
  *
  */
 package com.bridgelabz.generics;
 
 public class TestMaximum<T extends Comparable<T>> {
-	private T x, y, z;
+	T x, y, z;
 
-//constructor
+//constructor test maximum
 	public TestMaximum(T x, T y, T z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
 
-//checking max of three Generic datas 
-	public static <T extends Comparable<T>> T testMaximum(T... values) {
-		T max = values[0];
-		for (int i = 1; i < values.length; i++) {
-			if (values[i].compareTo(max) > 0) {
-				max = values[i];
-			}
-		}
-		System.out.println("the maximum of following variables");
-		for (int i = 0; i < values.length; i++) {
-			System.out.print(values[i] + "\t");
-		}
-		printMax(max);
+	public static <T extends Comparable<T>> T testMaximum(T x, T y, T z) {
+		T max = x;// Initializing x as greater
+		if (y.compareTo(max) > 0)
+			max = y;// as of now y is greater
+
+		if (z.compareTo(max) > 0)
+			max = z;// now z is greater
+		printMax(x, y, z, max);
 		return max;
+
 	}
 
-	public static <T> void printMax(T max) {
-		System.out.println("is\t" + max);
+	public static <T> void printMax(T x, T y, T z, T max) {
+		System.out.printf("the Max of following variables %s , %s and %s is %s\n", x, y, z, max);
 	}
 }
